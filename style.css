@@ -21,9 +21,87 @@ html {
     overflow-x: hidden;
 }
 body {
-    background: var(--bg-color) url(bg1.jpg) no-repeat center fixed;
+    background: var(--bg-color)url('bg1.jpg') no-repeat center center fixed;
     background-size: cover;
     color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.stars-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shooting-star {
+    position: absolute;
+    width: 150px;
+    height: 1.5px;
+    background: linear-gradient(-90deg, hsl(0, 9%, 73%), transparent);
+    animation: shooting 8s linear infinite;
+    opacity: 0.5;
+}
+
+.shooting-star:nth-child(1) {
+    top: 67%;
+    right: -100px;
+    transform-origin: center;
+    --angle: -20deg;
+    animation-delay: 0s;
+}
+
+.shooting-star:nth-child(2) {
+    top: 55%;
+    right: -100px;
+    transform-origin: center;
+    --angle: -28deg;
+    animation-delay: 2s;
+}
+
+.shooting-star:nth-child(3) {
+    top: 45%;
+    right: -100px;
+    transform-origin: center;
+    --angle: -23deg;
+    animation-delay: 4s;
+}
+
+.shooting-star:nth-child(4) {
+    top: 25%;
+    right: -100px;
+    transform-origin: center;
+    --angle: -18deg;
+    animation-delay: 6s;
+}
+
+.shooting-star:nth-child(5) {
+    top: 10%;
+    right: -100px;
+    transform-origin: center;
+    --angle: -13deg;
+    animation-delay: 8s;
+}
+
+@keyframes shooting {
+    0% {
+        transform: rotate(var(--angle)) translateX(0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotate(var(--angle)) translateX(-200vw);
+        opacity: 0;
+    }
 }
 .header {
     position: fixed;
