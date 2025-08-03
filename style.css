@@ -866,7 +866,7 @@ span{
     .project-card .btn {
         margin-top: 1rem;
     }
-    .logo span{
-        font-size: 3rem;
+    .logo{
+        font-size: 2.5rem;
     }
 }
